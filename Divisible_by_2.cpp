@@ -5,7 +5,7 @@ public:
     bool isPowerOfTwo(int n) {
         if(n <= 0)
             return false;
-        float ret = log(n)/log(4);
+        float ret = log(n)/log(2);
         if(ret - (int)ret < 0.000000001)
             return true;
         else 
@@ -15,5 +15,5 @@ public:
 int main(){
   int n=16;
   Solution s;
-  cout<<s.isPowerOfFour(n);
+  cout<<s.isPowerOfTwo(n);
 }
