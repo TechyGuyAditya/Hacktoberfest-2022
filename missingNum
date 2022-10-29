@@ -1,0 +1,38 @@
+package sorthingp;
+
+import java.util.Arrays;
+
+public class missingNum {
+    public static void main(String[] args) {
+        int[] arr = {0,4,2,1};
+        cycle(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+    public static int cycle(int[] arr){
+        // given range between one to n numbers then we need to use this
+        // most important sorting method
+        // we can do this in the single for loop
+        int i =0;
+        while(i <arr.length){
+            int correct = arr[i];
+            if( arr[i] < arr.length && arr[i] != arr[correct]){
+                swap(arr,i,correct);
+            }
+            else{
+                i++;
+            }
+        }
+        //srch for the element
+        for (int j = 0; j < arr.length; j++) {
+            if(arr[j] != j){
+                return j;
+            }
+        }
+        return arr.length;
+    }
+     static void swap(int[] arr, int first , int secound ){
+        int temp = arr[first];
+        arr[first]=arr[secound];
+        arr[secound]=temp;
+    }
+}
